@@ -1,0 +1,10 @@
+# How to get started on this project
+
+= Introduction =
+
+super-go uses C++. Since the test environment is Windows, we will build it on windows.
+
+We will use the POCO C++ library to do logging and threading.
+
+
+= Details =
