@@ -1,21 +1,4 @@
-% -*- coding: utf-8 -*-
-% ----------------------------------------------------------------
-% Title: Database homework4
-% Author: Tang Linpeng
-% **** -----------------------------------------------------------
-% -*- coding:utf-8 -*-
-
 \documentclass{article}
-\usepackage{fontspec}
-\defaultfontfeatures{Mapping=tex-text}
-\usepackage[CJKaddspaces]{xeCJK}
-
-%\setCJKmainfont[BoldFont={SimHei}, ItalicFont={KaiTi}]{SimSun}
-%\setCJKsansfont{KaiTi}
-%\setCJKmonofont{SimHei}
-%\setCJKfamilyfont{xingkai}{STXingkai}
-%\setmainfont{Cambria}
-\punctstyle{quanjiao}
 \usepackage{subfig}
 \usepackage{listings}
 \usepackage{graphicx}
@@ -24,7 +7,6 @@
 \usepackage{amsthm}
 \usepackage{algorithm2e}
 \usepackage{booktabs}
-\usepackage{CJKfntef}
 \usepackage{enumerate}
 \usepackage{longtable}
 \usepackage{caption}
@@ -59,17 +41,15 @@
 
 \begin{document}
 \bibliographystyle{plain}
-\title{SuperGo: on how to build a simple computer go program}
-\date{May 14th, 2011}
-\author{Linpeng Tang, Li Han, Ye Pan}
+\title{SuperGo: The Manual}
+\author{Linpeng Tang, Qin Liu, Jiayuan Ma, Jiajun Shen}
 \maketitle
 
-%\section{Introduction} % by Mark Ma
- %should include implementation
-%\input{expert-knowledge-about-computer-go} % by LQ
-%\input{opening-book-construction} % by Mark Ma
-%\input{pattern-matching} % by Mark
 \input{MonteCarloMethod.tex}
-%\bibliography{library} % the references
+\input{ImprovingMCSimulations.tex} % by LQ
+%\input{opening book construction} % by Mark Ma
+%\input{pattern matching} % by Mark
+
+\bibliography{library} % the references
 \end{document}
 % ----------------------------------------------------------------
