@@ -2,7 +2,7 @@
 
 
 \section{Monte-Carlo Method}
-As the search space of Go is too large (the game tree is in the order of $10^360$ for alpha-beta tree search \cite{bouzy2001computer}, one major alternative to using hand-coded knowledge and searches is the use of Monte-Carlo methods.
+As the search space of Go is too large (the game tree is in the order of $10^{360}$ for alpha-beta tree search \cite{bouzy2001computer}, one major alternative to using hand-coded knowledge and searches is the use of Monte-Carlo methods.
 
 In the Monte-Carlo method, when we need to evaluate the current state of a Go board (say, we need to estimate whether Black is more likely to win than White), we simply simulate ``random'' plays on the board and see what happens when the simulation of the game ends. Alpha-beta tree search doesn't work well for computer Go, because on the one hand it is impossible to search the whole tree until it reaches the terminal state, and on the other hand if we only search for several steps the evaluation may be very inaccurate. In Go a good move may not seen to be useful until many steps later. The Monte-Carlo method, however, overcomes this difficulty because it simulates to the end of the game, when the state can be easily evaluated.
 
