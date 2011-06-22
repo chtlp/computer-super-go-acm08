@@ -8,7 +8,7 @@
 
 \section{Improving Monte-Carlo Simulations}
 
-As introduced in the last section, we need to use the result of Monte-Carlo (MC) simulations to evaluate the probability of winning of current state in the MC tree search. In this section, we combine some expert knowledge to help us better estimate the probability.
+As introduced in the last section, we use the result of Monte-Carlo (MC) simulations to evaluate the probability of winning of nodes in the MC tree search. In this section, we combine some expert knowledge to help us better estimate the probability.
 
 \subsection{Efficient board representation}
 
@@ -21,6 +21,12 @@ The class \emph{GoUctBoard} is optimized for Monte-Carlo simulations. In contras
   \item Simple-Ko rule
   \item Suicide not allowed
 \end{itemize}
+
+\subsection{UCT Patterns Matching}
+
+Human players conclude some similar moves that are often important and can lead to win. To combine this knowledge, we implement patterns matching in the class \emph{UCTPatterns}.
+
+Our hard-coded patterns has evolved from the the one originally used by MoGo \cite{gelly2007contribution}. At the highest priority levels, capture moves, atari-defense moves, and moves matching a small set of hand-selected $3 \times 3$ ``MoGo'' patterns are chosen if they are near the last move played on the board. If no move was selected so far, a global capture moves are attempted next. Finally, a move is selected randomly among all legal moves on the board.
 
 \subsection{The `Nakade' Problem}
 
