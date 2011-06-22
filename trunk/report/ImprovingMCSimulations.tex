@@ -26,18 +26,18 @@ The class \emph{GoUctBoard} is optimized for Monte-Carlo simulations. In contras
 
 Human players conclude some similar moves that are often important and can lead to win. To combine this knowledge, we implement patterns matching in the class \emph{UCTPatterns}.
 
-Our hard-coded patterns has evolved from the the one originally used by MoGo \cite{gelly2007contribution}. At the highest priority levels, capture moves, atari-defense moves, and moves matching a small set of hand-selected $3 \times 3$ ``MoGo'' patterns are chosen if they are near the last move played on the board. If no move was selected so far, a global capture moves are attempted next. Finally, a move is selected randomly among all legal moves on the board.
+Our hard-coded patterns has evolved from the the one originally used by MoGo\cite{gelly2007contribution}. At the highest priority levels, capture moves, atari-defense moves, and moves matching a small set of hand-selected $3 \times 3$ ``MoGo'' patterns are chosen if they are near the last move played on the board. If no move was selected so far, a global capture moves are attempted next. Finally, a move is selected randomly among all legal moves on the board.
 
 \subsection{The `Nakade' Problem}
 
 Nakade refers to a situation in which a group has a single large internal, enclosed space that can be made into two eyes by the right move --- or prevented from doing so by an enemy move. When the group is dead, the MC simulator which plays random moves sometimes estimates that it lives with a high probability. Therefore, the tree will not grow in the direction of right move. 
 
-This will lead to a false estimate of the probability of winning. To reflect the effect of a nakade, we use the below algorithm\cite{chaslot_combiningexpert}: if a contiguous set of exactly 3 free locations is surrounded by stones from the opponent, then we play at the center (the vital point) of this ``hole''.
+This will lead to a false estimate of the probability of winning. To reflect the effect of a nakade, we use the following algorithm\cite{chaslot_combiningexpert}: if a contiguous set of exactly 3 free locations is surrounded by stones from the opponent, then we play at the center (the vital point) of this ``hole''.
 
 \subsection{Unconditional Live}
 
-A set of chains of a player is said to be pass-alive if none of the chains in this set can be captured even if the player always passes. However, the above definition can be tedious to apply, because the required search space to prove pass-alive can be large. Benson \cite{benson1976life} defined the concept of unconditional life in a way that is easier to apply, because no search is required. At the same time, Benson also proved that a set of chains is unconditionally alive if and only if it is pass-alive. As such, unconditional life and pass-alive have become synonyms.
+A set of chains of a player is said to be pass-alive if none of the chains in this set can be captured even if the player always passes. However, the above definition can be tedious to apply, because the required search space to prove pass-alive can be large. Benson\cite{benson1976life} defined the concept of unconditional life in a way that is easier to apply, because no search is required. At the same time, Benson also proved that a set of chains is unconditionally alive if and only if it is pass-alive.
 
 Benson's definition of unconditional life also leads to an algorithm for finding chains that are unconditionally alive, known as Benson's algorithm. This algorithm is not easy to apply manually, and therefore is intended for computer life-and-death programs.
 
-With Benson's algorithm, when we find a set of chains is unconditional live, we can concentrate on other areas on the board which can reduce meaningless moves in MC simulations. 
+Because of the complexity of the algorithm, we did not implement it. But according to Fuego\cite{enzenberger2010fuego}, with Benson's algorithm, when we find a set of chains is unconditional live, we can concentrate on other areas on the board which can reduce meaningless moves in MC simulations. 
