@@ -14,7 +14,7 @@ As introduced in the last section, we use the result of Monte-Carlo (MC) simulat
 
 In order to run more MC simulations in limited time, we need more efficient board representation. The class \emph{GoBoard} defines a Go board that implements the rules of Go and provides a lot of helper functions to get blocks, liberties, adjacent blocks, and so on. We use a 1-D array to represent the board which is faster than the normal 2-D representation. To accelerate the operations of play a move, we need to maintain a data structure that stores the information of blocks in the current board and their liberties.
 
-The class \emph{GoUctBoard} is optimized for Monte-Carlo simulations. In contrast to class \emph{GoBoard}, this board makes certain assumptions that are usually true for Monte Carlo simulations for better efficiency:
+The class \emph{GoUctBoard} is optimized for Monte-Carlo simulations. In contrast to class \emph{GoBoard}, this board makes certain assumptions that usually hold for Monte Carlo simulations to achieve better efficiency:
 \begin{itemize}
   \item No undo
   \item Alternating play
@@ -24,7 +24,7 @@ The class \emph{GoUctBoard} is optimized for Monte-Carlo simulations. In contras
 
 \subsection{UCT Patterns Matching}
 
-Human players conclude some similar moves that are often important and can lead to win. To combine this knowledge, we implement patterns matching in the class \emph{UCTPatterns}.
+Human players conclude some similar moves that are often important and can lead to win. To combine this knowledge, we implement pattern matching in the class \emph{UCTPatterns}.
 
 Our hard-coded patterns has evolved from the the one originally used by MoGo\cite{gelly2007contribution}. At the highest priority levels, capture moves, atari-defense moves, and moves matching a small set of hand-selected $3 \times 3$ ``MoGo'' patterns are chosen if they are near the last move played on the board. If no move was selected so far, a global capture moves are attempted next. Finally, a move is selected randomly among all legal moves on the board.
 
