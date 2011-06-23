@@ -1,6 +1,6 @@
 \section{Construction and Usage of Opening Books}
 
-Games are usually divided into three phases: opening, middlegame and endgame. In any of the three phases, the default action of a computer program is to start a brute force search for a ``best'' move. Since such a search has to be performed within a limited time, it can only examine nodes down to a certain depth, which means that the calculated value is only a heuristic approximation of the game-theoretic value.
+Games are usually divided into three phases: opening, middlegame and endgame. In any of the three phases, the default action of a computer program is to start a brute force search for a ``best'' move. Since such a search has to be performed within a limited time, it can only examine nodes down to a certain depth, which means that the calculated value is only a heuristic approximation of the game-theoretic value\cite{lincke2002openbook}.
 
 Under such circumstances, strategies of using precalculated ``references'' have come into being. Such ``references'', in the parlance of games, are called books. Books designed for the opening phases of the game are called opening books, while books used in endgames are endgame books.
 
@@ -44,7 +44,7 @@ Q16 & K10 \\
 
 The other points in the 19x19 line goban is randomly mapped into the 13x13 line goban according to the adjacent situations of the point on the board.
 
-Since the board in the opening phase of the game contains very few stones, it is rather cumbersome to represent the whole board in the opening book. Instead, we use a sequence of strings to represent a sequence of initial moves of a game. For example,
+Since the board in the opening phase of the game contains very few stones, it is rather cumbersome to represent the whole board in the opening book\cite{lincke2002openbook}. Instead, we use a sequence of strings to represent a sequence of initial moves of a game. For example,
 \begin{verbatim}
 Q4 Q16 C4 D16 C14 F17 | D10
 \end{verbatim}
