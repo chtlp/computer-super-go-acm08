@@ -2,7 +2,7 @@
 
 Games are usually divided into three phases: opening, middlegame and endgame. In any of the three phases, the default action of a computer program is to start a brute force search for a ``best'' move. Since such a search has to be performed within a limited time, it can only examine nodes down to a certain depth, which means that the calculated value is only a heuristic approximation of the game-theoretic value.
 
-Under such circumstances, strategies of using precalculated ``references'' have come into being. Such ``references'', in the parlance of games, are called books. Books specially used in opening phases of the game are called opening books, while books used in endgames are endgame books.
+Under such circumstances, strategies of using precalculated ``references'' have come into being. Such ``references'', in the parlance of games, are called books. Books designed for the opening phases of the game are called opening books, while books used in endgames are endgame books.
 
 
 \subsection{Opening Books for Go}
@@ -10,21 +10,21 @@ Under such circumstances, strategies of using precalculated ``references'' have 
 An opening book is an important feature of any game-playing computer program. These books used to be constructed manually by an expert, by storing good moves suggested by theory, or simply by listing all games ever played by
 strong players.
 
-An opening book is especially useful in Go games since Go games have a extremely large search space in the opening phase of the game. Using a precalculated book will greatly improve the performance of a computer go and save the time in a time-limited competition.
+An opening book is especially useful in Go since Go has an extremely large search space in the opening phase of a game. Using a precalculated book will greatly improve the performance of a computer Go and save the time in a time-limited competition.
 
-During the history of Go game, human players have generalized several systematic theories in the opening phase of Go game. Fuseki, a Chinese word coined to represent initial sequence of moves in a game, is famous among professional go players. Only a proportion of fusekis have recognised or specific names. These include the two-star fuseki, three-star fuseki, Chinese fuseki, Kobayashi fuseki, and Shusaku fuseki.
+During the history of Go game, human players have generalized several systematic theories in the opening phase of Go game. Fuseki, a Chinese word coined to represent initial sequence of moves in a game, is famous among professional Go players. Only a proportion of fusekis have recognized or specific names. These include the two-star fuseki, three-star fuseki, Chinese fuseki, Kobayashi fuseki, and Shusaku fuseki.
 
 Generally, there are two types of fusekis, both of which have their own theoretical background:
 \begin{itemize}
 \item \textbf{Territorial approach}
-As played on a large board (the standard 19x19 line goban), the priority is given to playing corner enclosures, then to extending to the middle of the sides, and finally to the center because it is easier to secure territory in the corners than on the sides or in the center.
+As played on a large board (the standard $19 \times 19$ Go board), the priority is given to playing corner enclosures, then to extending to the middle of the sides, and finally to the center because it is easier to secure territory in the corners than on the sides or in the center.
 \item \textbf{Influence-oriented approach}
 Unlike the territory-oriented playing style, this approach emphasizes control of the center. The reason for this is that one's play should not be narrowly focused on attempting to secure points quickly by occupying the corners first. Although it requires more effort to secure the center, it is more profitable since the center constitutes the majority of territory on the board.
 \end{itemize}
 
 \subsection{Opening Books in SuperGo}
 
-In our SuperGo project, we adapt the opening book from Feugo. As the opening book of Feugo is largely for the 19x19 line goban, we have to process it in order to make it usable and reasonable in the 13x13 line goban. We use a mapping which maintains the locations of 9 special points on the goban. To be more specific, a rough mapping table is provided:
+In our SuperGo project, we adapt the opening book from Feugo. As the opening book of Feugo is largely for the $19 \times 19$ Go board, we have to process it in order to make it usable and reasonable in the $13 \times 13$ Go board. We use a mapping which maintains the locations of $9$ special points on the board. To be more specific, a rough mapping table is provided:
 
 \begin{center}
 \begin{tabular}{c|c}
